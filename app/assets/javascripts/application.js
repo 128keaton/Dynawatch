@@ -15,3 +15,10 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+ocument.body.requestFullscreen();
+
+$(document).ready(
+    function() {
+     document.body.requestFullscreen();
+});
