@@ -1,0 +1,13 @@
+
+<div class="node-<%= node.id %>">
+        <script>
+                $(document).ready(
+                    function() {
+                     setInterval(function() {
+                       $('.<%= node.id %>').load('/get/<%= node.id %>');
+                   }, 3000);
+               });
+            </script>
+    <h2><%= node.name %></h2>
+    <h1 class="<%= node.id %>"><%= node.count %></h1>
+</div>
