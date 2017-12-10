@@ -8,11 +8,7 @@ class MainController < ApplicationController
   end
 
   def update
-    if Node.find_by(id: params[:id]) 
-      node = Node.find(params[:id])
-      node.update(count: params[:count])
-      return_success(node)
-    elsif Node.find_by(name: params[:name])
+    if Node.find_by(name: params[:name])
       node = Node.find(params[:name])
       node.update(count: params[:count])
       return_success(node)
