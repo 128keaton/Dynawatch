@@ -9,7 +9,7 @@ class MainController < ApplicationController
 
   def update
     if Node.find_by(name: params[:name]) && params[:count]
-      node = Node.find(params[:name])
+      node = Node.where(name: params[:name]).first
       node.update(count: params[:count])
       return_success(node)
     elsif Node.find_by(name: params[:name]) == nil && params[:count]
@@ -29,7 +29,7 @@ class MainController < ApplicationController
   end
 
   def get_number
-    render html: Node.find(params[:id]).count
+    render html: Node.where(name: params[:name]).first.count
   end
 
   private
